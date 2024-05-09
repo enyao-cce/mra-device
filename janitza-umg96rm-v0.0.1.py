@@ -56,6 +56,7 @@ def cache():
         data.append(message)
         f.seek(0)
         json.dump(data, f)
+        f.truncate()
 
     print ("Cached message:\n", message)
 
