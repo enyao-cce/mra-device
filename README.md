@@ -8,7 +8,7 @@ The script janitza-umg96rm-v0.0.1.py takes readings from Janitza UMG 96 RM power
 
 #### Step 2: Install dependencies
 - Go to terminal
-- Enter this command `pip install -r requirements.txt`
+- Enter this command `sudo pip install -r requirements.txt`
 
 #### Step 3: Configure the script
 - In terminal, enter command `sudo nano janitza-umg96rm-v0.x.x.py`
