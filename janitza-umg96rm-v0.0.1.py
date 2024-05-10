@@ -64,7 +64,7 @@ def publish_message():
     topic = "topic/subtopic"
 
     global message
-    message = {"state": {"desired": message}}
+    message = {"state": {"reported": message}}
 
     client.publish(topic, json.dumps(message))
     print("Published message:\n", message)
