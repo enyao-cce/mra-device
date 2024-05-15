@@ -14,7 +14,8 @@ The script janitza-umg96rm-v0.0.1.py takes readings from Janitza UMG 96 RM power
 - In terminal, enter command `sudo nano janitza-umg96rm-v0.x.x.py`
 - Update broker_address
 - Update file paths to ca_cert, client_cert, client_key
-- Update the cache length in cache()
+- Update path to monthly cache in monthly_cache()
+- Update path to offline cache in offline_cache()
 - Update topic in publish_message()
 - (optional) Call read_registers() for additional devices
 	- Change device_id
