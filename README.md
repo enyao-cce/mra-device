@@ -33,6 +33,6 @@ The script janitza-umg96rm-v0.0.1.py takes readings from Janitza UMG 96 RM power
 	- Press Ctrl+X
 	- Press Y then Enter
 
-#### Step 4: Run the script
+#### Step 4: Run the scripts
 - In terminal, enter command `sudo python janitza-umg96rm-v0.x.x.py`
-- In a separate terminal, enter command `sudo python publish-cache-to-mqtt.py``
+- In a separate terminal, enter command `sudo python publish-cache-to-mqtt.py`
