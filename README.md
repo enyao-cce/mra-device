@@ -71,7 +71,6 @@ Reboot the system
 Edit janitza-umg96rm-v0.x.x.py
 ```
 sudo nano janitza-umg96rm-v0.x.x.py
-
 ```
 Scroll down until you see the sequence() function <br>
 
