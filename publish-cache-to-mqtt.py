@@ -5,15 +5,16 @@ import schedule
 import os
 import json
 import requests
+import config
 
-cache_file = 'offline_cache.json'
+cache_file = config.OFFLINE_CACHE
 
-broker_address = "mqtt.example.com"
+broker_address = config.BROKER_ADDRESS
 port = 8883
 
-ca_cert = "path/to/ca_cert"
-client_cert = "path/to/client_cert"
-client_key = "path/to/client_key"
+ca_cert = config.CA_CERT
+client_cert = config.CLIENT_CERT
+client_key = config.CLIENT_KEY
 
 def on_connect(client, userdata, flags, rc, properties=None):
     if rc == 0:
@@ -54,7 +55,7 @@ def publish_and_clear_cache():
 
     while client.is_connected() and len(cache) > 0:
         message = cache.pop(0)
-        topic = "topic/subtopic"
+        topic = config.TOPIC
         client.publish(topic, json.dumps(message))
 
         print (f"Published message:\n {message}\n")
