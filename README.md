@@ -16,7 +16,7 @@ Below are instructions on how to setup the python scripts.
 
 #### Step 2: Install dependencies
 ```
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
 ```
 
 #### Step 3: Update your settings in config.py
