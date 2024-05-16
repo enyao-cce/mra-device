@@ -82,15 +82,19 @@ label
 Save the file with Ctrl+X, press Y then press Enter <br>
 
 #### Check cache
-Example usage
+To print all rows
 ```
-python check_cache.py monthly_cache.json latest=5
+python check_cache.py monthly_cache.json
 ```
-Where `latest` specifies the number of rows to display <br><br>
-this also applies to `offline_cache.json`
+To print the latest 5 elements
+```
+python check_cache.py monthly_cache.json -latest 5
+```
+Where `latest` specifies the most recent number of rows to display <br><br>
+This also applies to `offline_cache.json`
 
 #### Reset cache
-Examlpe usage
+Example usage
 ```
 python reset_cache.py monthly_cache.json
 ```
