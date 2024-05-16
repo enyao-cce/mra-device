@@ -7,13 +7,14 @@ import json
 import struct
 import minimalmodbus
 import requests
+import config
 
-broker_address = "mqtt.example.com"
+broker_address = config.BROKER_ADDRESS
 port = 8883
 
-ca_cert = "path/to/ca_cert"
-client_cert = "path/to/client_cert"
-client_key = "path/to/client_key"
+ca_cert = config.CA_CERT
+client_cert = config.CLIENT_CERT
+client_key = config.CLIENT_KEY
 
 def on_connect(client, userdata, flags, rc, properties=None):
     if rc == 0:
@@ -57,7 +58,7 @@ def is_internet_available():
         return False
 
 def monthly_cache():
-     with open('path/to/monthly_cache.json', 'r+') as f:
+     with open(config.MONTHLY_CACHE, 'r+') as f:
         cache = json.load(f)
         thirty_days_ago = int(time.time() * 1000) - (30 * 24 * 60 * 60 * 1000)
         cache = [entry for entry in cache if entry['state']['reported']['timestamp'] > thirty_days_ago]
@@ -71,7 +72,7 @@ def offline_cache():
     if is_internet_available() and client.is_connected():
         print ("Mqtt connection is available. No need to add message to offline cache")
         return
-    with open('path/to/offline_cache.json', 'r+') as f:
+    with open(config.OFFLINE_CACHE, 'r+') as f:
         cache = json.load(f)
         thirty_days_ago = int(time.time() * 1000) - (30 * 24 * 60 * 60 * 1000)
         cache = [entry for entry in cache if entry['state']['reported']['timestamp'] > thirty_days_ago]
@@ -82,7 +83,7 @@ def offline_cache():
     print ("Added message to offline cache:\n", message)
 
 def publish_message():
-    topic = "topic/subtopic"
+    topic = config.TOPIC
 
     global message
     message = {"state": {"reported": message}}
