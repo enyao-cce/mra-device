@@ -1,4 +1,4 @@
 paho-mqtt==2.0.0
 minimalmodbus==2.1.1
 schedule==1.2.1
-request==2.25.1
+requests==2.25.1
