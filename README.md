@@ -10,9 +10,9 @@ Below are instructions on how to setup the python scripts.
 ## Setup Guide
 
 #### Step 1: MQTT client authentication using SSL certs
-* Download your client certificate, private key, and root CA certificate from AWS IoT console
+* Download client certificate, private key, and root CA certificate from AWS IoT console
 * Create a new 'certs' folder in the same directory as janitza-umg96rm-v0.x.x.py
-* Place your AWS certificates in the 'certs' folder
+* Place the AWS certificates in the 'certs' folder
 
 #### Step 2: Install dependencies
 ```
@@ -66,6 +66,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable name-of-your-service.service
 ```
 Reboot the system
+```
+sudo reboot
+```
 
 #### Fetch data from multiple devices
 Edit janitza-umg96rm-v0.x.x.py
