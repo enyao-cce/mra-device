@@ -36,6 +36,8 @@ sudo python publish-cache-to-mqtt.py
 ## Additional Information
 
 #### Autostart python scripts using systemd (Recommended)
+For `janitza-umg96rm-v0.x.x.py` and `publish-cache-to-mqtt.py`
+
 Create a new service
 ```
 sudo nano /etc/systemd/system/name-of-your-service.service
@@ -71,7 +73,7 @@ sudo reboot
 ```
 
 #### Fetch data from multiple devices
-Edit janitza-umg96rm-v0.x.x.py
+Go into `janitza-umg96rm-v0.x.x.py`
 ```
 sudo nano janitza-umg96rm-v0.x.x.py
 ```
