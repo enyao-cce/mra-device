@@ -54,6 +54,8 @@ def is_internet_available():
     try:
         res = requests.get('https://www.google.com', timeout=5)
         return res.status_code == 200
+    except requests.exceptions.Timeout:
+        return False
     except requests.ConnectionError:
         return False
 
