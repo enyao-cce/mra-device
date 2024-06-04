@@ -86,7 +86,7 @@ Reboot the system
 ```
 sudo reboot
 ```
-(Optional) Service-related commands:
+(Optional) .service-related commands:<br>
 Check the status of the service
 ```
 sudo systemctl status name-of-your-service.service
@@ -139,6 +139,6 @@ This also applies to `offline_cache.json`
 
 ## Troubleshooting
 Scenario: sudo systemctl status shows the name-of-your-service failed to run, try the following:
-* reconnect the USB converter 
+* Reconnect the USB converter
 * Check the path in ExecStart in the .service file is correct
 * Check the BROKER_ADDRESS in config.py is correct
