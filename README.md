@@ -42,6 +42,10 @@ Open a new terminal and run
 ```
 python publish-cache-to-mqtt.py
 ```
+Deactivate the virtual environment (Only use this command when moving on to other applications in the same terminal)
+```
+deactivate
+```
 
 ## Additional Information
 
@@ -61,7 +65,7 @@ After=multi-user.target
 [Service]
 Type=idle
 User=pi
-ExecStart=/usr/bin/python3 /home/pi/your-Python-script.py
+ExecStart=/usr/bin/python3 /home/pi/mra-device/your-Python-script.py
 Environment=PYTHONPATH=/home/pi/mra-device/myenv/lib/python3.11/site-packages
 Restart=always
 
@@ -82,7 +86,20 @@ Reboot the system
 ```
 sudo reboot
 ```
+(Optional) Service-related commands:
+Check the status of the service
+```
+sudo systemctl status name-of-your-service.service
+```
+Stop the service
+```
+sudo systemctl stop name-of-your-service.service
+```
+Start the service
+```
+sudo systemctl start name-of-your-service.service
 
+```
 #### Fetch data from multiple devices
 Go into `janitza-umg96rm-v0.x.x.py`
 ```
@@ -119,3 +136,9 @@ This also applies to `offline_cache.json`
 ## Precaution
 1. **Do not rename the cache files, they are used for reference**<br>
 2. **Ensure cache files only contain either an empty list or a list of dictionary items**
+
+## Troubleshooting
+Scenario: sudo systemctl status shows the name-of-your-service failed to run, try the following:
+* reconnect the USB converter 
+* Check the path in ExecStart in the .service file is correct
+* Check the BROKER_ADDRESS in config.py is correct
