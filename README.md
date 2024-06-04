@@ -86,16 +86,15 @@ Reboot the system
 ```
 sudo reboot
 ```
-(Optional) .service-related commands:<br>
-Check the status of the service
+(Optional) Check the status of the service
 ```
 sudo systemctl status name-of-your-service.service
 ```
-Stop the service
+(Optional) Stop the service
 ```
 sudo systemctl stop name-of-your-service.service
 ```
-Start the service
+(Optional) Start the service
 ```
 sudo systemctl start name-of-your-service.service
 
