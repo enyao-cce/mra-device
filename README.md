@@ -15,22 +15,32 @@ Below are instructions on how to setup the python scripts.
 * Place the AWS certificates in the 'certs' folder
 
 #### Step 2: Install dependencies
+Download the virtual environment library and Create a virtual environment
 ```
-sudo pip install -r requirements.txt
+sudo apt install python3-venv
+python -m venv myenv
+```
+Activate the virtual environment
+```
+source myenv/bin/activate
+```
+Install dependencies
+```
+pip install -r requirements.txt
 ```
 
 #### Step 3: Update your settings in config.py
 ```
-sudo nano config.py
+nano config.py
 ```
 
 #### Step 4: Run the python scripts
 ```
-sudo python janitza-umg96rm-v0.x.x.py
+python janitza-umg96rm-v0.x.x.py
 ```
 Open a new terminal and run
 ```
-sudo python publish-cache-to-mqtt.py
+python publish-cache-to-mqtt.py
 ```
 
 ## Additional Information
@@ -52,6 +62,7 @@ After=multi-user.target
 Type=idle
 User=pi
 ExecStart=/usr/bin/python3 /home/pi/your-Python-script.py
+Environment=PYTHONPATH=/home/pi/mra-device/myenv/lib/python3.11/site-packages
 Restart=always
 
 [Install]
