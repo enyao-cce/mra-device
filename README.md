@@ -65,6 +65,7 @@ After=multi-user.target
 [Service]
 Type=idle
 User=pi
+ExecStartPre=/bin/sh -c 'until ping -c1 google.com; do sleep 10; done;'
 ExecStart=/usr/bin/python3 /home/pi/mra-device/your-Python-script.py
 Environment=PYTHONPATH=/home/pi/mra-device/myenv/lib/python3.11/site-packages
 Restart=always
