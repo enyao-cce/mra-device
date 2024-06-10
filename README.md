@@ -112,6 +112,8 @@ For Janitza power meters, call read_registers() in the line after the existing o
 device_id
 label
 ```
+<br>
+
 Save the file with Ctrl+X, press Y then press Enter <br>
 
 For non-Janitza power meters, call read_regisers() in the line after the existing on and change the following parameters:
