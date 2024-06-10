@@ -115,8 +115,7 @@ For non-Janitza power meters, add a functioncode if needed (E.g. Crompton Integr
 ```
 fc
 ```
-<br>
-Add a new register dictionary variable may if needed too
+Create a new register dictionary if addresses are different for the non-Janitza power meter
 ```
 register_dict
 ```
