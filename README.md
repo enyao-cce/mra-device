@@ -106,16 +106,11 @@ Go into `janitza-umg96rm-v0.x.x.py`
 sudo nano janitza-umg96rm-v0.x.x.py
 ```
 Scroll down until you see the sequence() function <br>
-
 For Janitza power meters, call read_registers() in the line after the existing one and change the following parameters:
 ```
 device_id
 label
 ```
-<br>
-
-Save the file with Ctrl+X, press Y then press Enter <br>
-
 For non-Janitza power meters, call read_regisers() in the line after the existing on and change the following parameters:
 ```
 device_id
@@ -127,6 +122,7 @@ And define a new set of registers
 ```
 register_dict
 ```
+Save the file with Ctrl+X, press Y then press Enter
 
 #### Check cache
 To print all rows
