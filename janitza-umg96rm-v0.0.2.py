@@ -40,7 +40,6 @@ def read_registers(device_port, device_id, register_dict, label):
     instrument.serial.timeout = 1
 
     global message
-    message = {"timestamp": int(time.time()*1000)}
 
     try:
         for key, value in register_dict.items():
@@ -115,6 +114,10 @@ def sequence():
         "apparentS3": 19032,
         "apparentSsum3": 19034
     }
+
+    global message
+    message = {"timestamp": int(time.time()*1000)}
+
     read_registers(port, 1, registers, 'testlabel')
     publish_message()
     monthly_cache()
