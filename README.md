@@ -111,14 +111,12 @@ For Janitza power meters, call read_registers() in the line after the existing o
 device_id
 label
 ```
-For non-Janitza power meters, call read_regisers() in the line after the existing on and change the following parameters:
+For non-Janitza power meters, add a functioncode if needed (E.g. Crompton Integra 1630 power meters use fc=4)
 ```
-device_id
-label
 fc
 ```
-E.g. For Crompton Integra 1630 power meters, use fc=4 <br>
-And define a new set of registers
+<br>
+Add a new register dictionary variable may if needed too
 ```
 register_dict
 ```
