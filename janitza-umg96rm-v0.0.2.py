@@ -119,7 +119,8 @@ def sequence():
     global message
     message = {"timestamp": int(time.time()*1000)}
 
-    read_registers(port, 1, registers, 'testlabel')
+    read_registers(port, 1, registers, 'MSB1')
+    read_registers(port, 2, registers, 'MSB2')
     publish_message()
     monthly_cache()
     offline_cache()
