@@ -10,8 +10,8 @@ Below are instructions on how to setup the python scripts.
 ## Setup Guide
 
 #### What You Will Need:
-* Raspberry Pi Model 4 with Raspbian OS (Bookworm) installed
-<br>
+1. Raspberry Pi Model 4 with Raspbian OS (Bookworm) installed
+
 
 #### Step 1: MQTT client authentication using SSL certs
 * Download client certificate, private key, and root CA certificate from AWS IoT console
