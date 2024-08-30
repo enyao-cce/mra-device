@@ -34,7 +34,7 @@ while not client.is_connected():
 
 message = {}
 
-def read_registers(device_port, device_id, register_dict, label):
+def read_registers(device_port, device_id, register_dict, label, fc=3):
     instrument = minimalmodbus.Instrument(device_port, device_id)
     instrument.serial.baudrate = 9600
     instrument.serial.timeout = 1
@@ -43,7 +43,7 @@ def read_registers(device_port, device_id, register_dict, label):
 
     try:
         for key, value in register_dict.items():
-            reg = instrument.read_registers(int(value), 2, functioncode=3)
+            reg = instrument.read_registers(int(value), 2, functioncode=fc)
             float_value = struct.unpack('>f', struct.pack('>HH', reg[0], reg[1]))[0]
             message[f"{label}_{key}"] = float_value
     except Exception as e:
@@ -112,7 +112,8 @@ def sequence():
         "apparentS1": 19028,
         "apparentS2": 19030,
         "apparentS3": 19032,
-        "apparentSsum3": 19034
+        "apparentSsum3": 19034,
+        "frequency": 19050
     }
 
     global message
