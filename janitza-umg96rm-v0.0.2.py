@@ -94,6 +94,27 @@ def publish_message():
 
 def sequence():
     port = '/dev/ttyUSB0'
+    
+    # Code update
+
+    # Define global message here
+    # global message
+    
+    # Create symbolic path for USB-to-RS485 converter
+    # symlink_path = '/dev/USB_SERIAL_CONVERTER'
+    
+    # Create error message if USB-to-RS485 converter is disconnected. To show in MQTTBox.
+    # try:
+    #     if os.path.islink(symlink_path):
+    #         port = '/dev/' + os.readlink(symlink_path)
+    #     print (f'Connected USB port: {port}')
+    
+    # except UnboundLocalError as e:
+    # print ('USB Device is disconnected')
+    # message = 'USB device is disconnected'
+    # client.publish(config.TOPIC, message)
+    # print ("Published message:\n", message)
+
     registers = {
         "voltL1-N": 19000,
         "voltL2-N": 19002,
