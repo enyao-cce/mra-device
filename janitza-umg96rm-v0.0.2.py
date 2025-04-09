@@ -110,10 +110,10 @@ def sequence():
     #     print (f'Connected USB port: {port}')
     
     # except UnboundLocalError as e:
-    # print ('USB Device is disconnected')
-    # message = 'USB device is disconnected'
-    # client.publish(config.TOPIC, message)
-    # print ("Published message:\n", message)
+    #     print ('USB Device is disconnected')
+    #     message = 'USB device is disconnected'
+    #     client.publish(config.TOPIC, message)
+    #     print ("Published message:\n", message)
 
     registers = {
         "voltL1-N": 19000,
